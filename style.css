@@ -1,0 +1,38 @@
+* {
+     box-sizing: border-box;
+}
+
+body {
+     margin: 0;
+     min-height: 100vh;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+input {
+     text-align: center;
+}
+
+th, td {
+     text-align: center;
+     width: 200px;
+}
+
+.btn {
+     margin-top: 16px;
+}
+
+.table2 {
+     margin-top: 16px;
+}
+
+.colorGray {
+     background-color: gray;
+}
+
+.colorLightgray {
+     background-color: lightgray;
+}

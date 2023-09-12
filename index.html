@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>forzaTuning</title>
+          <link rel="stylesheet" href="style.css" />
+     </head>
+     <body>
+          <table border="1" cellpadding="10" width="800">
+               <tr>
+                    <td></td>
+                    <th>Передняя нагрузка в %</th>
+                    <th>Задняя нагрузка в %</th>
+               </tr>
+               <tr>
+                    <td></td>
+                    <td><input id="perNagruzka" type="number" /></td>
+                    <td id="output-zadNagruzka"></td>
+               </tr>
+               <tr>
+                    <th></th>
+                    <td align="center"><b>Мин</b></td>
+                    <td align="center"><b>Макс</b></td>
+               </tr>
+               <tr>
+                    <th>Стабы</th>
+                    <th><input id="stabiMin" type="number" /></th>
+                    <th><input id="stabiMax" type="number" /></th>
+               </tr>
+               <tr>
+                    <th>Передние пружины</th>
+                    <th><input id="perPruzhiniMin" type="number" /></th>
+                    <th><input id="perPruzhiniMax" type="number" /></th>
+               </tr>
+               <tr>
+                    <th>Задние пружины</th>
+                    <th><input id="zadPruzhiniMin" type="number" /></th>
+                    <th><input id="zadPruzhiniMax" type="number" /></th>
+               </tr>
+               <tr>
+                    <th>Амортизаторы</th>
+                    <th><input id="amortiMin" type="number" /></th>
+                    <th><input id="amortiMax" type="number" /></th>
+               </tr>
+               <tr>
+                    <th>Аэро переднее</th>
+                    <th><input id="perAeroMin" type="number" /></th>
+                    <th><input id="perAeroMax" type="number" /></th>
+               </tr>
+               <tr>
+                    <th>Аэро заднее</th>
+                    <th><input id="zadAeroMin" type="number" /></th>
+                    <th><input id="zadAeroMax" type="number" /></th>
+               </tr>
+          </table>
+
+          <button class="btn" onclick="Calculate()">Лессго</button>
+
+          <table class="table2" border="1" cellpadding="10" width="800">
+               <tr>
+                    <th colspan="3">Ну зырь</th>
+                    <th colspan="2">Грязь</th>
+               </tr>
+               <tr>
+                    <th></th>
+                    <th align="center">Перед</th>
+                    <th align="center">Зад</th>
+                    <th align="center">Перед</th>
+                    <th align="center">Зад</th>
+               </tr>
+               <tr>
+                    <th>Стабы</th>
+                    <td id="output-perStabi"></td>
+                    <td id="output-zadStabi"></td>
+               </tr>
+               <tr>
+                    <th>Передние пружины</th>
+                    <td id="output-perPruzhini"></td>
+                    <td class="colorGray"></td>
+                    <td id="output-gryazPerPruzhini"></td>
+                    <td class="colorGray"></td>
+               </tr>
+               <tr>
+                    <th>Задние пружины</th>
+                    <td class="colorGray"></td>
+                    <td id="output-zadPruzhini"></td>
+                    <td class="colorGray"></td>
+                    <td id="output-gryazZadPruzhini"></td>
+               </tr>
+               <tr>
+                    <th>Амортизаторы</th>
+                    <td id="output-perAmorti"></td>
+                    <td id="output-zadAmorti"></td>
+                    <td id="output-gryazPerAmorti"></td>
+                    <td id="output-gryazZadAmorti"></td>
+               </tr>
+               <tr>
+                    <th>Аэро переднее</th>
+                    <td id="output-perAero"></td>
+                    <td class="colorGray"></td>
+                    <th class="colorLightgray" rowspan="2">25% от Аэро</th>
+                    <td id="output-25%PerAero"></td>
+               </tr>
+               <tr>
+                    <th>Аэро заднее</th>
+                    <td class="colorGray"></td>
+                    <td id="output-zadAero"></td>
+                    <td id="output-25%ZadAero"></td>
+               </tr>
+          </table>
+
+          <script src="index.js"></script>
+     </body>
+</html>
