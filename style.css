@@ -29,10 +29,10 @@ th, td {
      margin-top: 16px;
 }
 
-.colorGray {
-     background-color: gray;
+.colorLightGray {
+     background-color: lightgray;
 }
 
-.colorLightgray {
-     background-color: lightgray;
+.textBold {
+     font-weight: bold;
 }
