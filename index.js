@@ -1,13 +1,13 @@
 function Calculate() {
      const perNagruzka = Number(document.getElementById("perNagruzka").value);
-     const stabiMin = Number(document.getElementById("stabiMin").value);
-     const stabiMax = Number(document.getElementById("stabiMax").value);
+     const stabiMin = 1;
+     const stabiMax = 65;
      const perPruzhiniMin = Number(document.getElementById("perPruzhiniMin").value);
      const perPruzhiniMax = Number(document.getElementById("perPruzhiniMax").value);
      const zadPruzhiniMin = Number(document.getElementById("zadPruzhiniMin").value);
      const zadPruzhiniMax = Number(document.getElementById("zadPruzhiniMax").value);
-     const amortiMin = Number(document.getElementById("amortiMin").value);
-     const amortiMax = Number(document.getElementById("amortiMax").value);
+     const amortiMin = 1;
+     const amortiMax = 20;
      const perAeroMin = Number(document.getElementById("perAeroMin").value);
      const perAeroMax = Number(document.getElementById("perAeroMax").value);
      const zadAeroMin = Number(document.getElementById("zadAeroMin").value);
@@ -20,11 +20,11 @@ function Calculate() {
      outputZadNagruzka *= -1;
 
      if (perNagruzka > outputZadNagruzka) {
-          raznicaNagruzok = perNagruzka - outputZadNagruzka;
-          raznicaNagruzok /= 200;
+          raznicaNagruzok = perNagruzka - 50;
+          raznicaNagruzok /= 100;
      } else {
-          raznicaNagruzok = outputZadNagruzka - perNagruzka;
-          raznicaNagruzok /= 200;
+          raznicaNagruzok = outputZadNagruzka - 50;
+          raznicaNagruzok /= 100;
      }
 
      let outputPerStabi = (stabiMax - stabiMin) * (perNagruzka / 100) + stabiMin;
@@ -48,7 +48,7 @@ function Calculate() {
 
                document.getElementById("output-perAero").innerHTML = outputAero.toFixed(0);
                document.getElementById("output-zadAero").innerHTML = zadAeroMax.toFixed(0);
-               
+
                let output25ZadAero = (zadAeroMax - zadAeroMin) * 0.25 + zadAeroMin;
                let output25PerAero = output25ZadAero * raznicaNagruzok;
                output25PerAero = output25ZadAero - output25PerAero;
