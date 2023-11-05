@@ -16,7 +16,8 @@ input {
      text-align: center;
 }
 
-th, td {
+th,
+td {
      text-align: center;
      width: 200px;
 }
