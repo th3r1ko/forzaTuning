@@ -38,8 +38,11 @@ function Calculate() {
 
      let outputGryazPerPruzhini = (outputPerPruzhini - perPruzhiniMin) * 0.5 + perPruzhiniMin;
      let outputGryazZadPruzhini = (outputZadPruzhini - zadPruzhiniMin) * 0.5 + zadPruzhiniMin;
+
      let outputGryazPerAmorti = (outputPerAmorti - amortiMin) * 0.5 + amortiMin;
      let outputGryazZadAmorti = (outputZadAmorti - amortiMin) * 0.5 + amortiMin;
+     let outputGryazPerBump = outputGryazPerAmorti / 1.6;
+     let ouputGryazZadBump = outputGryazZadAmorti / 1.6;
 
      if (perNagruzka > outputZadNagruzka) {
           if (perAeroMax > zadAeroMax) {
@@ -113,4 +116,6 @@ function Calculate() {
           outputGryazZadPruzhini.toFixed(1);
      document.getElementById("output-gryazPerAmorti").innerHTML = outputGryazPerAmorti.toFixed(1);
      document.getElementById("output-gryazZadAmorti").innerHTML = outputGryazZadAmorti.toFixed(1);
+     document.getElementById("output-gryazPerBump").innerHTML = outputGryazPerBump.toFixed(1);
+     document.getElementById("output-gryazZadBump").innerHTML = ouputGryazZadBump.toFixed(1);
 }
