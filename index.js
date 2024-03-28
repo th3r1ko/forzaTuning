@@ -41,8 +41,8 @@ function Calculate() {
 
      let outputGryazPerAmorti = (outputPerAmorti - amortiMin) * 0.5 + amortiMin;
      let outputGryazZadAmorti = (outputZadAmorti - amortiMin) * 0.5 + amortiMin;
-     let outputGryazPerBump = outputGryazPerAmorti / 1.6;
-     let ouputGryazZadBump = outputGryazZadAmorti / 1.6;
+     let outputGryazPerBump = outputGryazPerAmorti * 0.6;
+     let ouputGryazZadBump = outputGryazZadAmorti * 0.6;
 
      if (perNagruzka > outputZadNagruzka) {
           if (perAeroMax > zadAeroMax) {
