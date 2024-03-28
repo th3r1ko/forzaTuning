@@ -37,7 +37,8 @@ function Calculate() {
      let outputZadAmorti = (amortiMax - amortiMin) * (outputZadNagruzka / 100) + amortiMin;
 
      let outputGryazPerPruzhini = (outputPerPruzhini - perPruzhiniMin) * 0.5 + perPruzhiniMin;
-     let outputGryazZadPruzhini = (outputZadPruzhini - zadPruzhiniMin) * 0.5 + zadPruzhiniMin;
+     let outputGryazZadPruzhini1 = (outputZadPruzhini - zadPruzhiniMin) * 0.5 + zadPruzhiniMin;
+     let outputGryazZadPruzhini = outputGryazZadPruzhini1 * 0.6;
 
      let outputGryazPerAmorti = (outputPerAmorti - amortiMin) * 0.5 + amortiMin;
      let outputGryazZadAmorti = (outputZadAmorti - amortiMin) * 0.5 + amortiMin;
