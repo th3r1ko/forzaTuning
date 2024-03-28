@@ -1,13 +1,13 @@
 function Calculate() {
      const perNagruzka = Number(document.getElementById("perNagruzka").value);
-     const stabiMin = 1;
-     const stabiMax = 65;
+     const stabiMin = Number(document.getElementById("stabiMin2").value);
+     const stabiMax = Number(document.getElementById("stabiMax2").value);
      const perPruzhiniMin = Number(document.getElementById("perPruzhiniMin").value);
      const perPruzhiniMax = Number(document.getElementById("perPruzhiniMax").value);
      const zadPruzhiniMin = Number(document.getElementById("zadPruzhiniMin").value);
      const zadPruzhiniMax = Number(document.getElementById("zadPruzhiniMax").value);
-     const amortiMin = 1;
-     const amortiMax = 20;
+     const amortiMin = Number(document.getElementById("amortiMin2").value);
+     const amortiMax = Number(document.getElementById("amortiMax2").value);
      const perAeroMin = Number(document.getElementById("perAeroMin").value);
      const perAeroMax = Number(document.getElementById("perAeroMax").value);
      const zadAeroMin = Number(document.getElementById("zadAeroMin").value);
