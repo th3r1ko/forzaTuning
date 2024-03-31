@@ -1,5 +1,5 @@
 function Calculate() {
-     const perNagruzka = Number(document.getElementById("perNagruzka").value);
+     const perRazvesovka = Number(document.getElementById("perRazvesovka").value);
      const stabiMin = Number(document.getElementById("stabiMin2").value);
      const stabiMax = Number(document.getElementById("stabiMax2").value);
      const perPruzhiniMin = Number(document.getElementById("perPruzhiniMin").value);
@@ -13,28 +13,28 @@ function Calculate() {
      const zadAeroMin = Number(document.getElementById("zadAeroMin").value);
      const zadAeroMax = Number(document.getElementById("zadAeroMax").value);
 
-     let raznicaNagruzok = Number();
-     let outputZadNagruzka = Number();
+     let raznicaRazvesovki = Number();
+     let outputZadRazvesovka = Number();
 
-     outputZadNagruzka = perNagruzka - 100;
-     outputZadNagruzka *= -1;
+     outputZadRazvesovka = perRazvesovka - 100;
+     outputZadRazvesovka *= -1;
 
-     if (perNagruzka > outputZadNagruzka) {
-          raznicaNagruzok = perNagruzka - 50;
-          raznicaNagruzok /= 100;
+     if (perRazvesovka > outputZadRazvesovka) {
+          raznicaRazvesovki = perRazvesovka - 50;
+          raznicaRazvesovki /= 100;
      } else {
-          raznicaNagruzok = outputZadNagruzka - 50;
-          raznicaNagruzok /= 100;
+          raznicaRazvesovki = outputZadRazvesovka - 50;
+          raznicaRazvesovki /= 100;
      }
 
-     let outputPerStabi = (stabiMax - stabiMin) * (perNagruzka / 100) + stabiMin;
-     let outputZadStabi = (stabiMax - stabiMin) * (outputZadNagruzka / 100) + stabiMin;
+     let outputPerStabi = (stabiMax - stabiMin) * (perRazvesovka / 100) + stabiMin;
+     let outputZadStabi = (stabiMax - stabiMin) * (outputZadRazvesovka / 100) + stabiMin;
      let outputPerPruzhini =
-          (perPruzhiniMax - perPruzhiniMin) * (perNagruzka / 100) + perPruzhiniMin;
+          (perPruzhiniMax - perPruzhiniMin) * (perRazvesovka / 100) + perPruzhiniMin;
      let outputZadPruzhini =
-          (zadPruzhiniMax - zadPruzhiniMin) * (outputZadNagruzka / 100) + zadPruzhiniMin;
-     let outputPerAmorti = (amortiMax - amortiMin) * (perNagruzka / 100) + amortiMin;
-     let outputZadAmorti = (amortiMax - amortiMin) * (outputZadNagruzka / 100) + amortiMin;
+          (zadPruzhiniMax - zadPruzhiniMin) * (outputZadRazvesovka / 100) + zadPruzhiniMin;
+     let outputPerAmorti = (amortiMax - amortiMin) * (perRazvesovka / 100) + amortiMin;
+     let outputZadAmorti = (amortiMax - amortiMin) * (outputZadRazvesovka / 100) + amortiMin;
 
      let outputGryazPerPruzhini = (outputPerPruzhini - perPruzhiniMin) * 0.5 + perPruzhiniMin;
      let outputGryazZadPruzhini1 = (outputZadPruzhini - zadPruzhiniMin) * 0.5 + zadPruzhiniMin;
@@ -45,29 +45,29 @@ function Calculate() {
      let outputGryazPerBump = outputGryazPerAmorti * 0.6;
      let ouputGryazZadBump = outputGryazZadAmorti * 0.6;
 
-     if (perNagruzka > outputZadNagruzka) {
+     if (perRazvesovka > outputZadRazvesovka) {
           if (perAeroMax > zadAeroMax) {
-               let outputAero = zadAeroMax * raznicaNagruzok;
+               let outputAero = zadAeroMax * raznicaRazvesovki;
                outputAero = zadAeroMax - outputAero;
 
                document.getElementById("output-perAero").innerHTML = outputAero.toFixed(0);
                document.getElementById("output-zadAero").innerHTML = zadAeroMax.toFixed(0);
 
                let output25ZadAero = (zadAeroMax - zadAeroMin) * 0.25 + zadAeroMin;
-               let output25PerAero = output25ZadAero * raznicaNagruzok;
+               let output25PerAero = output25ZadAero * raznicaRazvesovki;
                output25PerAero = output25ZadAero - output25PerAero;
 
                document.getElementById("output-25%ZadAero").innerHTML = output25ZadAero.toFixed(0);
                document.getElementById("output-25%PerAero").innerHTML = output25PerAero.toFixed(0);
           } else {
-               let outputAero = perAeroMax * raznicaNagruzok;
+               let outputAero = perAeroMax * raznicaRazvesovki;
                outputAero = perAeroMax - outputAero;
 
                document.getElementById("output-perAero").innerHTML = outputAero.toFixed(0);
                document.getElementById("output-zadAero").innerHTML = perAeroMax.toFixed(0);
 
                let output25ZadAero = (perAeroMax - perAeroMin) * 0.25 + perAeroMin;
-               let output25PerAero = output25ZadAero * raznicaNagruzok;
+               let output25PerAero = output25ZadAero * raznicaRazvesovki;
                output25PerAero = output25ZadAero - output25PerAero;
 
                document.getElementById("output-25%ZadAero").innerHTML = output25ZadAero.toFixed(0);
@@ -75,27 +75,27 @@ function Calculate() {
           }
      } else {
           if (perAeroMax > zadAeroMax) {
-               let outputAero = zadAeroMax * raznicaNagruzok;
+               let outputAero = zadAeroMax * raznicaRazvesovki;
                outputAero = zadAeroMax - outputAero;
 
                document.getElementById("output-perAero").innerHTML = zadAeroMax.toFixed(0);
                document.getElementById("output-zadAero").innerHTML = outputAero.toFixed(0);
 
                let output25PerAero = (zadAeroMax - zadAeroMin) * 0.25 + zadAeroMin;
-               let output25ZadAero = output25PerAero * raznicaNagruzok;
+               let output25ZadAero = output25PerAero * raznicaRazvesovki;
                output25ZadAero = output25PerAero - output25ZadAero;
 
                document.getElementById("output-25%PerAero").innerHTML = output25PerAero.toFixed(0);
                document.getElementById("output-25%ZadAero").innerHTML = output25ZadAero.toFixed(0);
           } else {
-               let outputAero = perAeroMax * raznicaNagruzok;
+               let outputAero = perAeroMax * raznicaRazvesovki;
                outputAero = perAeroMax - outputAero;
 
                document.getElementById("output-perAero").innerHTML = perAeroMax.toFixed(0);
                document.getElementById("output-zadAero").innerHTML = outputAero.toFixed(0);
 
                let output25PerAero = (perAeroMax - perAeroMin) * 0.25 + perAeroMin;
-               let output25ZadAero = output25PerAero * raznicaNagruzok;
+               let output25ZadAero = output25PerAero * raznicaRazvesovki;
                output25ZadAero = output25PerAero - output25ZadAero;
 
                document.getElementById("output-25%PerAero").innerHTML = output25PerAero.toFixed(0);
@@ -103,7 +103,7 @@ function Calculate() {
           }
      }
 
-     document.getElementById("output-zadNagruzka").innerHTML = outputZadNagruzka;
+     document.getElementById("output-zadRazvesovka").innerHTML = outputZadRazvesovka;
      document.getElementById("output-perStabi").innerHTML = outputPerStabi.toFixed(1);
      document.getElementById("output-zadStabi").innerHTML = outputZadStabi.toFixed(1);
      document.getElementById("output-perPruzhini").innerHTML = outputPerPruzhini.toFixed(1);
